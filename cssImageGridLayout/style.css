@@ -1,0 +1,56 @@
+/* || RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* || GENERAL STYLES */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* || MAIN */
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+/* || RESPONSIVE */
+
+@media screen and (min-width: 550px) {
+    .main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    img:nth-child(odd) {
+        grid-row: span 2; /* Esses itens ocupam 2 linhas */
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    img:nth-child(5) {
+        grid-column: 2;
+        grid-row: 2 / span 2;
+    }
+}

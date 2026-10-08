@@ -1,6 +1,6 @@
 # cssAcessibleFormUI
 
-This is a CSS practice project proposed by the roadmap.sh community. Its purpose is to create a basic HTML and CSS static website structure with an acessible form UI.
+This is a CSS practice project proposed by the roadmap.sh community. Its purpose is to create a basic HTML and CSS static website structure with an accessible form UI.
 
 ## Instructions to run
 
