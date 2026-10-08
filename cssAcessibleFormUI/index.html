@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessible Form UI</title>
+    <!-- Could have OG tags, icons, more meta tags -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content-container">
+        <main>
+            <form class="form" method="POST" action="https://httpbin.org/post">
+                <label for="full-name">Full Name</label><input class="form__input" type="text" name="full-name"
+                    id="full-name" required aria-required="true" placeholder="What should we call you?">
+                <label for="email">Email</label><input class="form__input invalid-field" type="email" name="email"
+                    id="email" required aria-required="true" aria-describedby="email-error" aria-invalid="true"
+                    placeholder="john@doe.com">
+                <p id="email-error" class="p--invalid">Email is already taken</p>
+                <label for="pwd" class="form__section-label">Enter Password</label>
+                <div class="pwd-container">
+                    <input class="form__input" type="password" name="pwd" id="pwd" required aria-required="true"
+                        placeholder="xxxxxxxx">
+                    <button class="form__input-button" type="button" aria-label="Toggle password visibility">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                fill="#000000" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+
+                            <circle cx="12" cy="12" r="3" fill="#000000" stroke="#ffffff" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"></circle>
+                        </svg>
+                    </button>
+                </div>
+                <label for="pwd-confirm">Confirm Password</label>
+                <div class="pwd-container">
+                    <input class="form__input" type="password" name="pwd-confirm" id="pwd-confirm" required
+                        aria-required="true" placeholder="xxxxxxxx">
+                    <button class="form__input-button" type="button" aria-label="Toggle password visibility">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                fill="#000000" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round"></path>
+
+                            <circle cx="12" cy="12" r="3" fill="#000000" stroke="#ffffff" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round"></circle>
+                        </svg>
+                    </button>
+                </div>
+                <button class="form__submit-button form__section-label" type="submit">Update Profile</button>
+            </form>
+
+        </main>
+        <aside class="aside">
+            <div class="aside-completeness">
+                <span>65%</span>
+                <p>Profile Completeness</p>
+            </div>
+            <div class="profile-checklist">
+                <ul profile-checklist__ul>
+                    <li><del class="nowrap">Create Account</del></li>
+                    <li><del class="nowrap">Update Roadmap Progress</del></li>
+                    <li><del class="nowrap">Setup Public Profile</del></li>
+                    <li>Complete your first project</li>
+                    <li>Invite your Friends</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>
