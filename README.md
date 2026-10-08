@@ -4,6 +4,6 @@ I created this project to store some of the multiple roadmap.sh projects I'm pra
 
 These are the projects in this repo:
 
-## Acessible Form
+## Accessible Form
 
 https://roadmap.sh/projects/accessible-form-ui
