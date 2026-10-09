@@ -46,9 +46,9 @@ button:focus {
     /* PADDINGS */
     --body-padding: 1rem;
     --btn-padding: 0.5rem 1.5em;
-    --card-padding: 2rem;
+    --card-padding: 1.5rem;
     --highlight-padding: 0.5rem 1rem;
-    --list-padding: 1.5rem 0;
+    --list-padding: 1.5rem 0.5rem;
     --main-padding: 1rem;
 
     /* BORDERS */
@@ -91,34 +91,13 @@ body {
     min-height: 100vh;
 }
 
-ul {
-    list-style-type: none;
-}
-
-ul li::before {
-    content: "";
-    display: inline-block;
-    width: var(--li-marker-size);
-    height: var(--li-marker-size);
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="whitesmoke"/><path d="M9.9997 15.1709L6.4138 11.585L4.9996 12.9992L9.9997 17.9993L19.0001 8.9989L17.5859 7.5847L9.9997 15.1709Z" fill="black"/></svg>');
-    border: var(--li-marker-border);
-    border-radius: var(--li-marker-border-radius);
-    margin-right: var(--li-marker-margin);
-    flex-shrink: 0;
-}
-
-ul li {
-    display: flex;
-    align-items: center;
-}
-
 button {
     border: var(--btn-border);
     background-color: var(--btn-bg-color);
     font-weight: bold;
     border-radius: var(--btn-border-radius);
     padding: var(--btn-padding);
-    width: 100%;
+    width: 90%;
     cursor: pointer;
     margin-top: auto;
 }
@@ -186,7 +165,7 @@ button {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    max-width: 350px;
+    max-width: 320px;
     align-items: center;
     padding: var(--card-padding);
     position: relative;
@@ -204,6 +183,7 @@ button {
 }
 
 .feature-list {
+    list-style-type: none;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -212,6 +192,24 @@ button {
     border-top: var(--list-border-top);
     padding: var(--list-padding);
     margin-top: 1rem;
+}
+
+.feature-list li::before {
+    content: "";
+    display: inline-block;
+    width: var(--li-marker-size);
+    height: var(--li-marker-size);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="whitesmoke"/><path d="M9.9997 15.1709L6.4138 11.585L4.9996 12.9992L9.9997 17.9993L19.0001 8.9989L17.5859 7.5847L9.9997 15.1709Z" fill="black"/></svg>');
+    border: var(--li-marker-border);
+    border-radius: var(--li-marker-border-radius);
+    margin-right: var(--li-marker-margin);
+    flex-shrink: 0;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* || PRICE SECTION */
