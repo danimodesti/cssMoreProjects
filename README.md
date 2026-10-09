@@ -19,3 +19,7 @@ https://roadmap.sh/projects/tooltip-ui
 ## Pricing Cards
 
 https://roadmap.sh/projects/pricing-cards
+
+## Theme Switcher
+
+https://roadmap.sh/projects/theme-switcher

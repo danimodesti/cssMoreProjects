@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher</title>
+    <!-- Could have og tags, more metas, icons -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <input class="sr-only" type="radio" name="theme" id="light-theme" value="Light">
+            <label class="header__label" for="light-theme">Light</label>
+            <input class="sr-only" type="radio" name="theme" id="dark-theme" value="Dark">
+            <label class="header__label" for="dark-theme">Dark</label>
+            <input class="sr-only" type="radio" name="theme" id="custom-theme" value="Custom">
+            <label class="header__label" for="custom-theme">Custom</label>
+        </header>
+        <main class="main">
+            <h1 class="main__title">Hello, World!</h1>
+            <p class="main__description">This is a simple card that changes theme with CSS variables.</p>
+            <button type="button" class="main__btn">Primary Button</button>
+        </main>
+    </div>
+</body>
+
+</html>
