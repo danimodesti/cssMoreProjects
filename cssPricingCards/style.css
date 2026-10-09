@@ -1,0 +1,271 @@
+/* || RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font: inherit;
+}
+
+button:focus {
+    outline: var(--outline);
+    outline-offset: var(--outline-offset);
+}
+
+/* || VARIABLES */
+
+:root {
+    /* FONTS */
+    --font-family: "Arial", sans-serif;
+    --font-size: clamp(1rem, 1vw + 0.4rem, 1.125rem);
+    --plan-title-size: 2rem;
+    --price-highlight-size: 4rem;
+    --currency-highlight-size: 2rem;
+
+    /* SVG */
+    --li-marker-size: 1rem;
+
+    /* COLORS */
+    --font-color: #000000;
+    --bg-color: #f5f5f5;
+    --card-border-color: black;
+    --highlight-color: #a80a0a;
+    --highlighted-font-color: whitesmoke;
+    --btn-border-color: black;
+    --btn-bg-color: rgb(237, 231, 231);
+    --btn-hover-bg-color: rgb(120, 114, 114);
+    --btn-highlight-hover-bg-color: #6c0909;
+    --highlight-border-color: black;
+    --li-marker-border-color: black;
+
+    /* PADDINGS */
+    --body-padding: 1rem;
+    --btn-padding: 0.5rem 1.5em;
+    --card-padding: 2rem;
+    --highlight-padding: 0.5rem 1rem;
+    --list-padding: 1.5rem 0;
+    --main-padding: 1rem;
+
+    /* BORDERS */
+    --card-border: 2px solid var(--card-border-color);
+    --card-border-radius: 10px;
+    --btn-border: 2px solid var(--btn-border-color);
+    --btn-border-radius: 5px;
+    --highlight-border: 2px solid var(--highlight-border-color);
+    --highlight-border-radius: 5px;
+    --li-marker-border: 1px solid var(--li-marker-border-color);
+    --li-marker-border-radius: 50%;
+    --list-border-top: 1px solid var(--card-border-color);
+
+    /* MARGINS */
+    --period-margin-left: 0.3rem;
+    --li-marker-margin: 0.5rem;
+
+    /* SHADOWS */
+    --highlight-shadow: 10px 10px 10px rgb(192, 187, 187);
+
+    /* OUTLINES */
+    --outline: 2px solid var(--highlight-color);
+    --outline-offset: 2px;
+}
+
+/* || GENERAL STYLES */
+
+html {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+body {
+    padding: var(--body-padding);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Evitar esticar os itens na main */
+    min-height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li::before {
+    content: "";
+    display: inline-block;
+    width: var(--li-marker-size);
+    height: var(--li-marker-size);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="whitesmoke"/><path d="M9.9997 15.1709L6.4138 11.585L4.9996 12.9992L9.9997 17.9993L19.0001 8.9989L17.5859 7.5847L9.9997 15.1709Z" fill="black"/></svg>');
+    border: var(--li-marker-border);
+    border-radius: var(--li-marker-border-radius);
+    margin-right: var(--li-marker-margin);
+    flex-shrink: 0;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    border: var(--btn-border);
+    background-color: var(--btn-bg-color);
+    font-weight: bold;
+    border-radius: var(--btn-border-radius);
+    padding: var(--btn-padding);
+    width: 100%;
+    cursor: pointer;
+    margin-top: auto;
+}
+
+/* || UTILITY STYLES */
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.highlight-bg {
+    background-color: var(--highlight-color);
+    color: var(--highlighted-font-color);
+}
+
+.highlight-text {
+    color: var(--highlight-color);
+}
+
+.highlight-card::before {
+    content: "";
+    position: absolute;
+    border: var(--card-border);
+    border-radius: var(--card-border-radius);
+    inset: -3rem -0.5rem;
+    box-shadow: var(--highlight-shadow);
+    z-index: -1;
+}
+
+.card.highlight-card {
+    border: none;
+}
+
+.popular-plan {
+    font-weight: bold;
+    border: var(--highlight-border);
+    border-radius: var(--highlight-border-radius);
+    padding: var(--highlight-padding);
+    position: absolute;
+    top: -3rem; /* Topo do selo vai pro topo do card */
+    left: 50%; /*  Move o canto esquerdo do selo para o meio do card, horizontalmente */
+    transform: translate(
+        -50%,
+        -50%
+    ); /* Volta o meio do selo para o meio do card e alinha o meio verticalmente */
+}
+
+/* || MAIN */
+
+.pricing-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    padding: var(--main-padding);
+    width: 100%;
+    max-width: 1200px; /* Para telas muito grandes */
+}
+
+/* || CARD */
+
+.card {
+    border: var(--card-border);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 350px;
+    align-items: center;
+    padding: var(--card-padding);
+    position: relative;
+    flex: 1;
+}
+
+.plan-name {
+    font-size: var(--plan-title-size);
+}
+
+.tagline {
+    max-width: 18ch;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.5rem;
+    width: 100%;
+    border-top: var(--list-border-top);
+    padding: var(--list-padding);
+    margin-top: 1rem;
+}
+
+/* || PRICE SECTION */
+
+.price {
+    display: flex;
+    gap: 0.2rem;
+    line-height: 1;
+    align-items: center;
+}
+
+.currency,
+.amount {
+    font-weight: bold;
+}
+
+.currency {
+    font-size: var(--currency-highlight-size);
+}
+
+.amount {
+    font-size: var(--price-highlight-size);
+}
+
+.period {
+    align-self: flex-end;
+    margin-left: var(--period-margin-left);
+    line-height: 1.5;
+}
+
+/* || HOVER */
+
+@media (hover: hover) {
+    button:hover {
+        background-color: var(--btn-hover-bg-color);
+        box-shadow: var(--highlight-shadow);
+    }
+
+    button.highlight-bg:hover {
+        background-color: var(--btn-highlight-hover-bg-color);
+    }
+}
+
+/* || RESPONSIVE */
+
+@media screen and (max-width: 800px) {
+    .pricing-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    .card {
+        max-width: 450px;
+        width: 100%;
+    }
+}
