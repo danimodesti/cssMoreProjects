@@ -1,0 +1,270 @@
+/* || RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    font: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* || VARIABLES */
+
+:root {
+    /* FONTS */
+    --font-family: "Poppins", "Arial", sans-serif;
+    --hero-font-family: "Recursive";
+    --main-nav-font-family: "Recursive";
+    --font-size: clamp(1rem, 1vw + 0.4rem, 1.125rem);
+    --footer-font-family: "Source Sans 3";
+
+    /* COLORS */
+    --font-color: white;
+    --bg-color: #232830;
+    --highlight-color: #ff7575;
+    --grid-nav-color: #909090;
+    --hover-bg-color: rgb(87, 87, 87);
+    --shadow-color: #c0bbbb;
+    --highlight-bg-color: #4699e0;
+    --grid-card-bg-color: white;
+    --grid-card-color: #0f1217;
+    --main-border-color: rgba(128, 128, 128, 0.202);
+
+    /* PADDINGS */
+    --header-padding: 3rem;
+    --hero-padding: 4rem;
+    --main-padding: 1.5rem;
+    --image-grid-padding: 5rem 1rem;
+    --grid-card-padding: 1rem;
+    --grid-card-content-padding: 1rem;
+    --pages-padding: 0.5rem;
+    --footer-padding: 2rem 4rem;
+    --footer-highlight-padding: 0.5rem;
+
+    /* BORDERS */
+    --grid-card-border-radius: 15px;
+    --grid-card-img-border-radius: 10px;
+    --footer-highlight-border-radius: 5px;
+    --main-border: 1px solid var(--main-border-color);
+    --selected-page-border: 2px solid var(--highlight-color);
+
+    /* SHADOWS */
+    --highlight-shadow: 10px 10px 10px var(--shadow-color);
+
+    /* OUTLINES */
+    --outline: 3px solid var(--highlight-color);
+    --outline-offset: 3px;
+}
+
+/* || GENERAL STYLES */
+
+html {
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+svg {
+    width: 1.25rem;
+    height: auto;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* || HEADER */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--header-padding);
+    font-weight: normal;
+}
+
+.header__top {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header__ul {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.2rem;
+}
+
+.header__ul li a {
+    color: var(--font-color);
+}
+
+/* || HERO */
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: var(--hero-padding);
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+.hero__title {
+    font-family: var(--hero-font-family);
+    font-size: 3em;
+    color: var(--highlight-color);
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+/* || MAIN */
+
+.main {
+    border-top: var(--main-border);
+    border-bottom: var(--main-border);
+    padding: var(--main-padding);
+}
+
+/* || VIEWS */
+
+.view {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* || KEYWORDS */
+
+.keywords {
+    display: flex;
+    justify-content: center;
+    gap: 2.5em;
+    font-size: 1.3rem;
+}
+
+.keywords,
+.pages {
+    color: var(--grid-nav-color);
+    font-family: var(--main-nav-font-family);
+}
+
+/* || IMAGE GRID */
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--image-grid-padding);
+}
+
+.image-grid__card {
+    background-color: var(--grid-card-bg-color);
+    color: var(--grid-card-color);
+    border-radius: var(--grid-card-border-radius);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--grid-card-padding);
+    height: 100%;
+}
+
+.card__figure img {
+    border-radius: var(--grid-card-img-border-radius);
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: var(--grid-card-content-padding);
+    flex: 1; /* Ocupar todo o espaço vertical disponível */
+}
+
+.card__footer {
+    display: flex;
+    margin-top: auto;
+}
+
+.card__footer time::after {
+    content: "•";
+    margin-inline: 1rem;
+}
+
+/* || PAGES */
+
+.pages {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pages span {
+    padding: var(--pages-padding);
+}
+
+.pages--selected {
+    color: var(--highlight-color);
+    border-top: var(--selected-page-border);
+}
+
+/* || FOOTER */
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    padding: var(--footer-padding);
+    margin-bottom: 3rem;
+    font-family: var(--footer-font-family);
+}
+
+.author {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.author p {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.footer--highlight {
+    background-color: var(--highlight-bg-color);
+    border-radius: var(--footer-highlight-border-radius);
+    padding: var(--footer-highlight-padding);
+}
+
+button.footer--highlight {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--font-color);
+}
